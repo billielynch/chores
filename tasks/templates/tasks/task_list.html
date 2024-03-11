@@ -1,0 +1,37 @@
+{% extends "task_base.html" %}
+
+{% block title %}
+   Task List
+{% endblock %}
+
+
+{% block content %}
+
+<h1 class="heading">Tasks</h1>
+<div>
+<table class="task-list-table">
+{% for task in object_list %}
+    <tr>
+        <td> {{ task.name }} </td>
+        <td> {{ task.completed_last|date|default:"never" }} </td>
+        <td>
+            <button type="button" class="clean-button">
+                <a href="{% url 'task-complete' pk=task.id %}">complete</a>
+            </button>
+        </td>
+    </tr>
+{% empty %}
+    No tasks yet.
+{% endfor %}
+</table>
+</div>
+
+<br>
+
+<button type="button" class="clean-button">
+    <a href="{% url 'task-create' %}">add task</a>
+</button>
+{% endblock %}
+
+</body>
+</html>
