@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "chores"
+version = "0.1.0"
+description = ""
+authors = ["Billie Lynch <29699289+billielynch@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "^5.0.3"
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.9.0"
+isort = "^5.13.2"
+black = "^24.2.0"
+pytest = "^8.1.1"
+django-stubs = "^4.2.7"
+django-stubs-ext = "^4.2.7"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
