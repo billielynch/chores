@@ -8,12 +8,12 @@ from tasks import domain, models
 
 class TaskListView(ListView):
     model = models.Task
-    ordering = ["-completed_last"]
+    ordering = ["-completed_last_date"]
 
 
 class TaskCreateView(CreateView):
     model = models.Task
-    fields = ["name"]
+    fields = ["name", "frequency_days"]
 
 
 class TaskCompleteRedirectView(RedirectView):
